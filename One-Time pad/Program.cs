@@ -433,7 +433,7 @@ namespace One_Time_pad
         static void Main(string[] args)
         {
             Console.WriteLine("        --------------------------------");
-            Console.WriteLine("        | Welcome One-Time pad v.0.43B |");
+            Console.WriteLine("        | Welcome One-Time pad v.0.44B |");
             Console.WriteLine("        --------------------------------");
             Console.WriteLine("        |  Powered by Ishmael Vokram   |");
             Console.WriteLine("        |         aka    Adam Markov   |");
