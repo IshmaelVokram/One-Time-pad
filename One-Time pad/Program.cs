@@ -89,9 +89,9 @@ namespace One_Time_pad
                     }
                 }
 
-                string resultDataEncr = string.Join(null, resultMasEncr);
+                string resultData = NumToLitter(string.Join(null, resultMasEncr));
                 Console.WriteLine("-------------------------------------------------------");
-                Console.WriteLine("* Your encrypted data: {0}", resultDataEncr);
+                Console.WriteLine("* Your decrypted data: {0}", resultData);
             }
         }
 
@@ -241,6 +241,144 @@ namespace One_Time_pad
             string resultLitterToNum = string.Join(null, litteralStrMass);
             return resultLitterToNum;
         }
+
+        static string NumToLitter(string noRegDataValue)
+        {
+            for (int i = 2; i < noRegDataValue.Length; i += 2)
+            {
+                noRegDataValue = noRegDataValue.Insert(i, "/");
+                i++;
+            }
+
+            string[] litteralStrMass = noRegDataValue.Split('/');
+
+            Console.Write("\n[");
+
+            for (int i = 0; i < litteralStrMass.Length; i++)
+            {
+                Thread.Sleep(50);
+
+                if (litteralStrMass[i] == "01")
+                {
+                    litteralStrMass[i] = "A";
+                }
+                else if (litteralStrMass[i] == "02")
+                {
+                    litteralStrMass[i] = "E";
+                }
+                else if (litteralStrMass[i] == "03")
+                {
+                    litteralStrMass[i] = "I";
+                }
+                else if (litteralStrMass[i] == "04")
+                {
+                    litteralStrMass[i] = "N";
+                }
+                else if (litteralStrMass[i] == "05")
+                {
+                    litteralStrMass[i] = "O";
+                }
+                else if (litteralStrMass[i] == "06")
+                {
+                    litteralStrMass[i] = "T";
+                }
+                else if (litteralStrMass[i] == "70")
+                {
+                    litteralStrMass[i] = "B";
+                }
+                else if (litteralStrMass[i] == "71")
+                {
+                    litteralStrMass[i] = "C";
+                }
+                else if (litteralStrMass[i] == "72")
+                {
+                    litteralStrMass[i] = "D";
+                }
+                else if (litteralStrMass[i] == "73")
+                {
+                    litteralStrMass[i] = "F";
+                }
+                else if (litteralStrMass[i] == "74")
+                {
+                    litteralStrMass[i] = "G";
+                }
+                else if (litteralStrMass[i] == "75")
+                {
+                    litteralStrMass[i] = "H";
+                }
+                else if (litteralStrMass[i] == "76")
+                {
+                    litteralStrMass[i] = "J";
+                }
+                else if (litteralStrMass[i] == "77")
+                {
+                    litteralStrMass[i] = "K";
+                }
+                else if (litteralStrMass[i] == "78")
+                {
+                    litteralStrMass[i] = "L";
+                }
+                else if (litteralStrMass[i] == "79")
+                {
+                    litteralStrMass[i] = "M";
+                }
+                else if (litteralStrMass[i] == "80")
+                {
+                    litteralStrMass[i] = "P";
+                }
+                else if (litteralStrMass[i] == "81") // Кто посмотрел - тот сдохнет 2x!
+                {
+                    litteralStrMass[i] = "Q";
+                }
+                else if (litteralStrMass[i] == "82")
+                {
+                    litteralStrMass[i] = "R";
+                }
+                else if (litteralStrMass[i] == "83")
+                {
+                    litteralStrMass[i] = "S";
+                }
+                else if (litteralStrMass[i] == "84")
+                {
+                    litteralStrMass[i] = "U";
+                }
+                else if (litteralStrMass[i] == "85")
+                {
+                    litteralStrMass[i] = "V";
+                }
+                else if (litteralStrMass[i] == "86")
+                {
+                    litteralStrMass[i] = "W";
+                }
+                else if (litteralStrMass[i] == "87")
+                {
+                    litteralStrMass[i] = "X";
+                }
+                else if (litteralStrMass[i] == "88")
+                {
+                    litteralStrMass[i] = "Y";
+                }
+                else if (litteralStrMass[i] == "89")
+                {
+                    litteralStrMass[i] = "Z";
+                }
+                else if (litteralStrMass[i] == "90")
+                {
+                    litteralStrMass[i] = " ";
+                }
+                else
+                {
+                    Console.WriteLine("* Error read litter!!!");
+                }
+
+                Console.Write("#");
+            }
+
+            Console.Write("]\n\n");
+            string resultLitterToNum = string.Join(null, litteralStrMass);
+            return resultLitterToNum;
+        }
+
 
         static void Main(string[] args)
         {
