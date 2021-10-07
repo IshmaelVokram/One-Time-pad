@@ -397,7 +397,7 @@ namespace One_Time_pad
 
         static void MenuOne()
         {
-            Console.Write("\n* Enter menu litter, A - encryption, B - decryption: ");
+            Console.Write("\n* Enter menu litter, A - encryption, B - decryption or C - exit: ");
             string menuLitter = Console.ReadLine().ToUpper();
 
             if (menuLitter == "A")
@@ -408,9 +408,19 @@ namespace One_Time_pad
             {
                 Dencryption();
             }
+            else if (menuLitter == "C")
+            {
+                Console.WriteLine("\n* Ydachnoy dorogi, Stalker...");
+            }
+            else if (menuLitter == "ADAM MARKOV")
+            {
+                Console.WriteLine("* Yes, I'am...");
+                MenuOne();
+            }
             else
             {
                 Console.WriteLine("* Wrong menu litter!!!");
+                MenuOne();
             }
         }
 
