@@ -53,6 +53,48 @@ namespace One_Time_pad
             }
         }
 
+        static void Dencryption()
+        {
+            Console.Write("-------------------------------------------------------" +
+                "\n* Enter your data: ");
+
+            string enDataNoReg = Console.ReadLine();
+            Console.WriteLine("* Your key length should be: {0} !!!", enDataNoReg.Length);
+            int[] masEnycrOne = NumericValueOne(enDataNoReg);
+
+            Console.Write("* Enter your key: ");
+            string enKeyDataNoReg = Console.ReadLine();
+            int[] masKeyOne = NumericValueOne(enKeyDataNoReg);
+
+            if (masEnycrOne.Length != masKeyOne.Length)
+            {
+                Console.WriteLine("* Your key no valid!");
+            }
+            else
+            {
+                int[] resultMasEncr = new int[masEnycrOne.Length];
+                int numeric = 0;
+
+                for (int i = 0; i < masEnycrOne.Length; i++)
+                {
+                    if (masEnycrOne[i] < masKeyOne[i])
+                    {
+                        numeric = (masEnycrOne[i] + 10) - masKeyOne[i];
+                        resultMasEncr[i] = numeric;
+                    }
+                    else
+                    {
+                        numeric = masEnycrOne[i] - masKeyOne[i];
+                        resultMasEncr[i] = numeric;
+                    }
+                }
+
+                string resultDataEncr = string.Join(null, resultMasEncr);
+                Console.WriteLine("-------------------------------------------------------");
+                Console.WriteLine("* Your encrypted data: {0}", resultDataEncr);
+            }
+        }
+
         static int[] NumericValueOne(string giveData)
         {
             int counGivData = giveData.Length;
@@ -215,7 +257,7 @@ namespace One_Time_pad
             }
             else if (menuLitter == "B")
             {
-                // дешифрование
+                Dencryption();
             }
             else
             {
