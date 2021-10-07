@@ -115,11 +115,10 @@ namespace One_Time_pad
 
         static int[] NumericValueOne(string giveData)
         {
-            int counGivData = giveData.Length;
             char[] dataToMassOne = giveData.ToCharArray();
-            int[] dataMassive = new int[counGivData];
+            int[] dataMassive = new int[giveData.Length];
 
-            for (int i = 0; i < counGivData; i++)
+            for (int i = 0; i < giveData.Length; i++)
             {
                 dataMassive[i] = (int)Char.GetNumericValue(dataToMassOne[i]);
             }
@@ -417,6 +416,11 @@ namespace One_Time_pad
             else if (menuLitter == "ADAM MARKOV")
             {
                 Console.WriteLine("* Yes, I'am...");
+                MenuOne();
+            }
+            else if (menuLitter == "ALYONUSHKA")
+            {
+                Console.WriteLine("* I hope this is my future wife...");
                 MenuOne();
             }
             else
