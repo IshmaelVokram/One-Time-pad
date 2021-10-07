@@ -27,6 +27,7 @@ namespace One_Time_pad
             if (masEnycrOne.Length != masKeyOne.Length)
             {
                 Console.WriteLine("* Your key no valid!");
+                Encryption();
             }
             else
             {
@@ -77,6 +78,7 @@ namespace One_Time_pad
             if (masEnycrOne.Length != masKeyOne.Length)
             {
                 Console.WriteLine("* Your key no valid!");
+                Dencryption();
             }
             else
             {
