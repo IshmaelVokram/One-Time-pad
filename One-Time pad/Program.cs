@@ -33,19 +33,26 @@ namespace One_Time_pad
                 int[] resultMasEncr = new int[masEnycrOne.Length];
                 int numeric = 0;
 
+                Console.Write("\n        [");
+
                 for (int i = 0; i < masEnycrOne.Length; i++)
                 {
+                    Thread.Sleep(50);
                     if (masEnycrOne[i] < masKeyOne[i] || masEnycrOne[i] > masKeyOne[i] || masEnycrOne[i] == masKeyOne[i])
                     {
                         numeric = (masEnycrOne[i] + masKeyOne[i]) % 10;
                         resultMasEncr[i] = numeric;
+                        Console.Write("#");
                     }
                     else
                     {
                         numeric = masEnycrOne[i] + masKeyOne[i];
                         resultMasEncr[i] = numeric;
+                        Console.Write("#");
                     }
                 }
+
+                Console.Write("]\n\n");
 
                 string resultDataEncr = string.Join(null, resultMasEncr);
                 Console.WriteLine("-------------------------------------------------------");
@@ -75,19 +82,26 @@ namespace One_Time_pad
                 int[] resultMasEncr = new int[masEnycrOne.Length];
                 int numeric = 0;
 
+                Console.Write("\n        [");
+
                 for (int i = 0; i < masEnycrOne.Length; i++)
                 {
+                    Thread.Sleep(50);
                     if (masEnycrOne[i] < masKeyOne[i])
                     {
                         numeric = (masEnycrOne[i] + 10) - masKeyOne[i];
                         resultMasEncr[i] = numeric;
+                        Console.Write("#");
                     }
                     else
                     {
                         numeric = masEnycrOne[i] - masKeyOne[i];
                         resultMasEncr[i] = numeric;
+                        Console.Write("#");
                     }
                 }
+
+                Console.Write("]\n\n");
 
                 string resultData = NumToLitter(string.Join(null, resultMasEncr));
                 Console.WriteLine("-------------------------------------------------------");
@@ -113,7 +127,7 @@ namespace One_Time_pad
         {
             string[] litteralStrMass = new string[noRegDataValue.Length];
 
-            Console.Write("\n[");
+            Console.Write("\n        [");
 
             for (int i = 0; i < noRegDataValue.Length; i++)
             {
@@ -252,7 +266,7 @@ namespace One_Time_pad
 
             string[] litteralStrMass = noRegDataValue.Split('/');
 
-            Console.Write("\n[");
+            Console.Write("\n        [");
 
             for (int i = 0; i < litteralStrMass.Length; i++)
             {
