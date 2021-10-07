@@ -57,6 +57,7 @@ namespace One_Time_pad
                 string resultDataEncr = string.Join(null, resultMasEncr);
                 Console.WriteLine("-------------------------------------------------------");
                 Console.WriteLine("* Your encrypted data: {0}", resultDataEncr);
+                MenuOne();
             }
         }
 
@@ -106,6 +107,7 @@ namespace One_Time_pad
                 string resultData = NumToLitter(string.Join(null, resultMasEncr));
                 Console.WriteLine("-------------------------------------------------------");
                 Console.WriteLine("* Your decrypted data: {0}", resultData);
+                MenuOne();
             }
         }
 
@@ -393,14 +395,9 @@ namespace One_Time_pad
             return resultLitterToNum;
         }
 
-
-        static void Main(string[] args)
+        static void MenuOne()
         {
-            Console.WriteLine("        -------------------------------");
-            Console.WriteLine("        | Welcome One-Time pad v.0.31A|");
-            Console.WriteLine("        -------------------------------\n");
-
-            Console.Write("* Enter menu litter, A - encryption, B - decryption: ");
+            Console.Write("\n* Enter menu litter, A - encryption, B - decryption: ");
             string menuLitter = Console.ReadLine().ToUpper();
 
             if (menuLitter == "A")
@@ -415,6 +412,15 @@ namespace One_Time_pad
             {
                 Console.WriteLine("* Wrong menu litter!!!");
             }
+        }
+
+        static void Main(string[] args)
+        {
+            Console.WriteLine("        -------------------------------");
+            Console.WriteLine("        | Welcome One-Time pad v.0.42B|");
+            Console.WriteLine("        -------------------------------");
+
+            MenuOne();
 
             Console.ReadLine();
         }
