@@ -206,7 +206,7 @@ namespace One_Time_pad
                 {
                     litteralStrMass[i] = "80";
                 }
-                else if (litteralStrMass[i] == "Q") // Кто посмотрел - тот сдохнет!
+                else if (litteralStrMass[i] == "Q")
                 {
                     litteralStrMass[i] = "81";
                 }
@@ -343,7 +343,7 @@ namespace One_Time_pad
                 {
                     litteralStrMass[i] = "P";
                 }
-                else if (litteralStrMass[i] == "81") // Кто посмотрел - тот сдохнет 2x!
+                else if (litteralStrMass[i] == "81")
                 {
                     litteralStrMass[i] = "Q";
                 }
